@@ -17,9 +17,11 @@ provider "aws" {
 
 # ID aws_instance.app_server
 resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3"
+  ami           = "ami-08d70e59c07c61a3a"
   instance_type = "t2.micro"
-
+  # specify these if you dont have a default VPC in the region specified in provider block
+  # vpc_security_group_ids = ["sg-0077..."]
+  # subnet_id              = "subnet-923a..."
   tags = {
     Name = "ExampleAppServerInstance"
   }
